@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'matching.apps.MatchingConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,5 +134,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = "login"
-# LOGIN_REDIRECT_URL = "matching:index"
-# LOGOUT_REDIRECT_URL = "matching:index"  
+LOGIN_REDIRECT_URL = "matching:index"
+LOGOUT_REDIRECT_URL = "matching:index"  
+
+
+# Custom User
+AUTH_USER_MODEL = 'accounts.CustomUser'
