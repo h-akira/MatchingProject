@@ -29,3 +29,13 @@ def CustomUserEdit(request):
     return render(request, 'accounts/edit.html', context)
 ## クラス版も余裕があれば書く
 ## ドキュメントも添えて
+
+@login_required
+def CustomUserDetail(request, id):
+  user = CustomUser.objects.get(pk=id)
+  context = {
+    "user":user
+  }
+  return render(request, 'accounts/detail.html', context)
+
+
