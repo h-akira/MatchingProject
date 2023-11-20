@@ -32,9 +32,9 @@ def CustomUserEdit(request):
 
 @login_required
 def CustomUserDetail(request, id):
-  user = CustomUser.objects.get(pk=id)
+  user_object = CustomUser.objects.get(pk=id)
   context = {
-    "user":user
+    "user_object":user_object
   }
   return render(request, 'accounts/detail.html', context)
 
